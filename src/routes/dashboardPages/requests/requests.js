@@ -18,7 +18,7 @@ function displayBlank(props, context) {
         </div>
       </div>
 
-      <Panel header={<span align='center'>List of service providers </span>} >
+      <Panel header={<span>List of service providers </span>} >
             <div className="table-responsive">
               <table className="table table-striped table-bordered table-hover">
                 <thead>

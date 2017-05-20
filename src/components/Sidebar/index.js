@@ -21,30 +21,24 @@ class Sidebar extends Component {
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
 
+
+
             <li className={classNames({ active: !this.state.uiElementsCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({ uiElementsCollapsed: !this.state.uiElementsCollapsed,
-                }); return false;
-                }}
-              >
+              <a href = "" onClick={(e) => { e.preventDefault(); history.push('/mydocuments');  
+                this.setState({
+                    samplePagesCollapsed: !this.state.samplePagesCollapsed,
+                  });}}>
                 <i className="fa fa-edit fa-fw" /> My Documents
               </a>
             </li>
 
+
+
             <li className={classNames({ active: !this.state.samplePagesCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({
+              <a href = "" onClick={(e) => { e.preventDefault(); history.push('/requests');  
+                this.setState({
                     samplePagesCollapsed: !this.state.samplePagesCollapsed,
-                  });
-                  return false;
-                }}
-              >
+                  });}}>
                 <i className="fa fa-files-o fa-fw" />
                 &nbsp;Requests
       

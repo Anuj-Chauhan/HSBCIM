@@ -25,7 +25,8 @@ import panelwells from './dashboardPages/panelWells';
 import typography from './dashboardPages/typography';
 import blank from './dashboardPages/blank';
 import error from './error';
-import requests from './dashboardPages/requests'
+import requests from './dashboardPages/requests';
+import mydocuments from './dashboardPages/mydocuments';
 
 import Header from '../components/Header';
 
@@ -66,6 +67,7 @@ export default [
       // register,
       blank,
       requests,
+      mydocuments,
 
       // place new routes before...
       // content,
