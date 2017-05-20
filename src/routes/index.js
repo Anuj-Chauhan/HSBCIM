@@ -27,7 +27,7 @@ import blank from './dashboardPages/blank';
 import error from './error';
 import requests from './dashboardPages/requests';
 import mydocuments from './dashboardPages/mydocuments';
-
+import requesthistory from './dashboardPages/requesthistory';
 import Header from '../components/Header';
 
 export default [
@@ -68,6 +68,7 @@ export default [
       blank,
       requests,
       mydocuments,
+      requesthistory,
 
       // place new routes before...
       // content,
