@@ -21,7 +21,8 @@ const title = 'Log In';
 
 function submitHandler(e) {
   e.preventDefault();
-  history.push('/requests');
+  window.userType="ServiceProvider";
+  history.push('/responses');
 }
 
 function Login(props, context) {
