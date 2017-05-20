@@ -30,34 +30,8 @@ class Sidebar extends Component {
                 }); return false;
                 }}
               >
-                <i className="fa fa-edit fa-fw" /> My Documents<span className="fa arrow" />
+                <i className="fa fa-edit fa-fw" /> My Documents
               </a>
-
-              <ul
-                className={classNames({
-                  'nav nav-second-level': true,
-                  collapse: this.state.uiElementsCollapsed,
-                })}
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/panelwells'); }} >
-                    Upload new documents
-                  </a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/button'); }} >
-                    Update my documents
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    onClick={(e) => { e.preventDefault(); history.push('/notification'); }}
-                  >
-                    See my documents
-                  </a>
-                </li>
-              </ul>
             </li>
 
             <li className={classNames({ active: !this.state.samplePagesCollapsed })}>
@@ -72,7 +46,7 @@ class Sidebar extends Component {
                 }}
               >
                 <i className="fa fa-files-o fa-fw" />
-                &nbsp;Approve Service Provider
+                &nbsp;Requests
       
               </a>
               
