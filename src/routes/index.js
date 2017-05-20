@@ -26,6 +26,8 @@ import typography from './dashboardPages/typography';
 import blank from './dashboardPages/blank';
 import error from './error';
 import requests from './dashboardPages/requests'
+import responses from './dashboardPages/serviceprovider/responses'
+import requestdocs from './dashboardPages/serviceprovider/requestdocs'
 
 import Header from '../components/Header';
 
@@ -66,7 +68,8 @@ export default [
       // register,
       blank,
       requests,
-
+      responses,
+      requestdocs,
       // place new routes before...
       // content,
       error,
