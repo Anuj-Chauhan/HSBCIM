@@ -21,7 +21,7 @@ const title = 'Log In';
 
 function submitHandler(e) {
   e.preventDefault();
-  history.push('/');
+  history.push('/requests');
 }
 
 function Login(props, context) {
