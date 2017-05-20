@@ -28,6 +28,7 @@ import error from './error';
 import requests from './dashboardPages/requests'
 import responses from './dashboardPages/serviceprovider/responses'
 import requestdocs from './dashboardPages/serviceprovider/requestdocs'
+import mydocuments from './dashboardPages/mydocuments';
 
 import Header from '../components/Header';
 
@@ -70,6 +71,7 @@ export default [
       requests,
       responses,
       requestdocs,
+      mydocuments,
       // place new routes before...
       // content,
       error,

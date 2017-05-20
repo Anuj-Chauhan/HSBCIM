@@ -36,6 +36,8 @@ class Sidebar extends Component {
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
 
+
+
             <li className={classNames({ active: !this.state.uiElementsCollapsed })}>
               <a
                 href=""
@@ -45,16 +47,14 @@ class Sidebar extends Component {
                 }); return false;
                 }}
               >
-                {this.state.setDocType}
-              </a>
+                {this.state.setDocType}</a>
             </li>
 
+
+
             <li className={classNames({ active: !this.state.samplePagesCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({
+              <a href = "" onClick={(e) => { e.preventDefault(); history.push('/requests');  
+                this.setState({
                     samplePagesCollapsed: !this.state.samplePagesCollapsed,
                   });
                   return false;

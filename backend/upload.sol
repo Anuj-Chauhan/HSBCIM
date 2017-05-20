@@ -25,31 +25,47 @@ contract UserManagement {
 
 contract KYC is owned{
 
-    enum nameOfDocuments {aadhar,drivinglicence,pancard,passport,salarySlip};
     enum classOfDocuments {identityProof,addressProof,photoIdentityProof,incomeProof}
-    string externalApprover[] = ['y','n','n','n','n','n']
-    mapping (address => uint) myDocumnets;
+    mapping (address => Documnets[]) myDocuments;
     struct Approved{
-        string approvedBy;
-        string approvedDate;
+        address approvedBy;
+        uint approvedDate;
         bool approveStatus;
     }
     struct Documnets{
-        string classOfDocuments;
         string nameOfDocuments;
         address[] swarmHash;
-        mapping (uint => approved[]) myDocumnets;
+        mapping (uint => Approved[]) approvedHistory;
     }
-    function addMember(address _addr,string id, string pass, string mail, TypeChoice typ) onlyOwner returns (uint){
-    if(userExsists[id] == 0)
-    {
-        userId[id] = user ({pubAddress:_addr,password:sha3(pass),email:mail,mytype:typ});
-        userExsists[id] = 1;
-        UserCreated(id, userId[id].pubAddress ,userId[id].email,userId[id].mytype);
-        return 1;
-    }
-    else
+    function upload(string mynameOfDocuments,address myswarmHash) onlyOwner returns (uint){
+       
+        uint len1 = myDocuments[msg.sender].length++;
+        myDocuments[msg.sender][len1].nameOfDocuments= mynameOfDocuments;
+        uint len = myDocuments[msg.sender][len1].swarmHash.length++;
+        myDocuments[msg.sender][len1].swarmHash[len] = myswarmHash;
+            
     return 0;
     }
- 
+   function getSwarmHash(string mynameOfDocuments,address userPublicAddr) onlyOwner returns (address[]){
+      
+         uint len1 = myDocuments[userPublicAddr].length;
+         for (uint i =0;i<len1;i++){
+             if(stringsEqual(myDocuments[userPublicAddr][i].nameOfDocuments,mynameOfDocuments)){
+                 //uint len = myDocuments[msg.sender][len1].swarmHash.length;
+                 return myDocuments[userPublicAddr][i].swarmHash;     
+             }
+         }   
+    return ;
+    }
+    function stringsEqual(string storage _a, string memory _b) internal returns (bool) {
+		bytes storage a = bytes(_a);
+		bytes memory b = bytes(_b);
+		if (a.length != b.length)
+			return false;
+		// @todo unroll this loop
+		for (uint i = 0; i < a.length; i ++)
+			if (a[i] != b[i])
+				return false;
+		return true;
+	}
 }

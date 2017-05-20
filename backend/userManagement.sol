@@ -23,7 +23,7 @@ contract owned {
 contract UserManagement is owned{
 
     enum TypeChoice {Customer, ServiceProvider}
-    mapping (string => user) userIsd;
+    mapping (string => user) userId;
     mapping (string => uint) userExsists;
     event UserCreated(string UserId, address PublicAddress, string mail, TypeChoice typ);
     event EmailChanged(string UserId);
@@ -39,7 +39,7 @@ contract UserManagement is owned{
     function addMember(address _addr,string id, string pass, string mail, TypeChoice typ) onlyOwner returns (uint){
     if(userExsists[id] == 0)
     {
-        userId[id] = user ({pubAddress:_addr,password:sha3(pass),email:mail,mytype:typ});
+        userId[id] = user ({pubAddress:_addr,password:sha3(pass),email:mail,mytype:typ,verified:false});
         userExsists[id] = 1;
         UserCreated(id, userId[id].pubAddress ,userId[id].email,userId[id].mytype);
         return 1;
@@ -47,7 +47,7 @@ contract UserManagement is owned{
     else
     return 0;
     }
- function retriveVerified(string id) constant returns(address){
+ function retriveVerified(string id) constant returns(bool){
         if(userExsists[id] != 0)
         return userId[id].verified;
         else
