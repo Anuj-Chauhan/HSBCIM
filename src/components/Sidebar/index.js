@@ -16,7 +16,7 @@ class Sidebar extends Component {
     else
     {
      set_user_type = <p><i className="fa fa-files-o fa-fw" />&nbsp;Requests</p>
-     set_doc_type = <p><i className="fa fa-files-o fa-fw" />&nbsp;My Documents</p>
+     set_doc_type = <p><i className="fa fa-edit fa-fw" />&nbsp;My Documents</p>
     }
 
     this.state = {
