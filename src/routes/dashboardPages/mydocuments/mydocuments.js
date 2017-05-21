@@ -45,7 +45,7 @@ var MyDocuments = React.createClass({
       </div>
 
       <div className="row">
-        <div className="col-md-2 col-md-offset-9">
+        <div className="col-md-3 col-md-offset-9">
           <Button bsStyle="primary" bsSize="large" onClick={this.open}>Upload Documents</Button>
           
           <Modal show={this.state.showModal} onHide={this.close}>

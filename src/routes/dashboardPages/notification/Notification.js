@@ -7,6 +7,7 @@ import Tooltip from 'react-bootstrap/lib/Tooltip';
 import Popover from 'react-bootstrap/lib/Popover';
 import Modal, { Footer, Header, Title, Body } from 'react-bootstrap/lib/Modal';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
+import Label from 'react-bootstrap/lib/Label';
 
 
 class Notification extends Component {

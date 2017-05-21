@@ -6,6 +6,7 @@ import Pagination from 'react-bootstrap/lib/Pagination';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 import Well from 'react-bootstrap/lib/Well';
 import Modal, { Footer, Header, Title, Body } from 'react-bootstrap/lib/Modal';
+import Label from 'react-bootstrap/lib/Label';
 
 
 const title = 'My Request History';
@@ -86,13 +87,6 @@ var RequestHistory = React.createClass({
           </Modal.Footer>
           </Modal>
 
-      <div className="row">
-      <br/>
-      </div>
-
-
-
-
       <Panel header={<span>History of all documents </span>} >
             <div className="table-responsive">
               <table className="table table-striped table-bordered table-hover">
@@ -101,31 +95,45 @@ var RequestHistory = React.createClass({
                     <th># </th>
                     <th>Document Name </th>
                     <th>Last Verified on</th>
-                    <th>Status</th>
+                    <th>Most recent status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1 </td>
-                    <td><a href="#" onClick={this.open.bind(null,"Driving License")} >Driving License </a></td>
-                    <td>29/4/2017 </td>
-                    <td>Approved</td>
-            
+                    <td><a href="#" onClick={this.open.bind(null,"Driving License")}> Driving License </a></td>
+                    <td>08/5/2017 </td>
+                    <td><Label bsStyle="success">Approved</Label></td>
                   </tr>
+
+                  <tr>
+                    <td>1 </td>
+                    <td><a href="#" onClick={this.open.bind(null,"Driving License")}> Aadhar Card </a></td>
+                    <td>08/5/2017 </td>
+                    <td><Label bsStyle="success">Approved</Label></td>
+                  </tr>
+
+                  <tr>
+                    <td>1 </td>
+                    <td><a href="#" onClick={this.open.bind(null,"Driving License")}> PAN Card </a></td>
+                    <td>08/5/2017 </td>
+                    <td><Label bsStyle="success">Approved</Label></td>
+                  </tr>
+
                   <tr>
                     <td>2 </td>
                     <td><a href="#" onClick={this.open.bind(null,"Passport")}>Passport </a></td>
                     <td>13/5/2017 </td>
-                    <td>Approved</td>
-    
+                    <td><Label bsStyle="warning">Waiting</Label></td>
                   </tr>
+
                   <tr>
                     <td>3 </td>
                     <td><a href="#" onClick={this.open.bind(null,"Electricity Bill")}>Electricity Bill</a></td>
                     <td>18/6/2017 </td>
-                    <td>Approved</td>
-
+                    <td><Label bsStyle="danger">Rejected</Label></td>
                   </tr>
+
                 </tbody>
               </table>
             </div>
