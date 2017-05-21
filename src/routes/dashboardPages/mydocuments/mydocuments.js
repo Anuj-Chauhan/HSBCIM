@@ -10,7 +10,7 @@ import Modal, { Footer, Header, Title, Body } from 'react-bootstrap/lib/Modal';
 
 const title = 'My Documents';
 
-var displayBlank = React.createClass({
+var MyDocuments = React.createClass({
   getInitialState() {
     return { showModal: false };
 
@@ -29,7 +29,7 @@ var displayBlank = React.createClass({
       if (e.target.value === '8')
       {
         console.log(e.target.value);
-        ReactDOM.render(<input type="text" id="STATE"/>, document.getElementById("textBox"));
+        ReactDOM.render(<input type="text" id="STATE" placeholder = "Document name"/>, document.getElementById("textBox"));
       }
       else {
         ReactDOM.render(<div id = "dummy"/>, document.getElementById("textBox"));
@@ -111,7 +111,6 @@ var displayBlank = React.createClass({
                     <th>Date of Upload</th>
                   </tr>
                 </thead>
-                
                 <tbody>
                   <tr>
                     <td>1 </td>
@@ -142,4 +141,4 @@ var displayBlank = React.createClass({
     </div>
   );
 }});
-export default displayBlank;
+export default MyDocuments;

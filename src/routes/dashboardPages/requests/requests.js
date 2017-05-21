@@ -8,7 +8,7 @@ import Well from 'react-bootstrap/lib/Well';
 
 const title = 'Requests';
 
-function displayBlank(props, context) {
+function Requests(props, context) {
   context.setTitle(title);
   return (
     <div>
@@ -59,5 +59,5 @@ function displayBlank(props, context) {
 }
 
 
-displayBlank.contextTypes = { setTitle: PropTypes.func.isRequired };
-export default displayBlank;
+Requests.contextTypes = { setTitle: PropTypes.func.isRequired };
+export default Requests;

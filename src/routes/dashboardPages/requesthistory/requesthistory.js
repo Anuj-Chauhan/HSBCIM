@@ -10,7 +10,7 @@ import Modal, { Footer, Header, Title, Body } from 'react-bootstrap/lib/Modal';
 
 const title = 'My Request History';
 
-var displayBlank = React.createClass({
+var RequestHistory = React.createClass({
   getInitialState() {
     return { showModal: false, rows: [] };
 
@@ -25,33 +25,22 @@ var displayBlank = React.createClass({
 
     if (doc === "Passport") {
       for (var i = 0; i <= 5; i++) {
-      rowfiller.push(
-        <tr>{i}</tr>
-        );
-    {
-      console.log(document.getElementById("model1"))
-    }
-    this.setState({ showModal: true, rows: rowfiller});
+      rowfiller.push(<tr>{i}</tr>);
+      this.setState({ showModal: true, rows: rowfiller});
   }
-  } else if(doc === "Driving License"){
+  } 
+
+  else if(doc === "Driving License"){
   for (var i = 0; i <= 10; i++) {
-      rowfiller.push(
-        <tr>{i}</tr>
-        );
-    {
-      console.log(document.getElementById("model1"))
-    }
-    this.setState({ showModal: true, rows: rowfiller});
+      rowfiller.push(<tr>{i}</tr>);
+      this.setState({ showModal: true, rows: rowfiller});
   }
-  } else if(doc === "Electricity Bill"){
+  } 
+
+  else if(doc === "Electricity Bill"){
   for (var i = 0; i <= 2; i++) {
-      rowfiller.push(
-        <tr>{i}</tr>
-        );
-    {
-      console.log(document.getElementById("model1"))
-    }
-    this.setState({ showModal: true, rows: rowfiller});
+      rowfiller.push(<tr>{i}</tr>);
+      this.setState({ showModal: true, rows: rowfiller});
   }
 } ;
     
@@ -148,4 +137,4 @@ var displayBlank = React.createClass({
     </div>
   );
 }});
-export default displayBlank;
+export default RequestHistory;
